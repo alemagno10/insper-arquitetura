@@ -30,6 +30,10 @@ public class Conta {
         }
     }
 
+    public String toString(){
+        return pessoa.getNome()+" CPF: "+pessoa.getCpf();
+    }
+
     public Float getSaldo() {
         return saldo;
     }
