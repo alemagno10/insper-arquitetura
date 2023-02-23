@@ -1,0 +1,9 @@
+Padrões de Projeto
+
+-> Crição
+    SingleTon: Garantir que uma classe tenha apenas uma instância de si mesma.
+
+-> Estruturais
+    Controller / Service
+
+-> Comportamentais
