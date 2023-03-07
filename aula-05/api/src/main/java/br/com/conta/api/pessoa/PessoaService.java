@@ -36,6 +36,14 @@ public class PessoaService {
         return pessoas.get(id);
     }
 
+    public Pessoa getPessoa(String cpf) {
+        for (Pessoa pessoa : pessoas) {
+            if(pessoa.getCpf().equals(cpf)){
+                return pessoa;
+            }
+        } return null;
+    }
+
     public Pessoa salvarPessoa(Pessoa pessoa) {
         pessoas.add(pessoa);
         return pessoa;
