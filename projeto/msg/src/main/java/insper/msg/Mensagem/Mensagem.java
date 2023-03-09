@@ -10,7 +10,6 @@ import lombok.*;
 @Setter
 public abstract class Mensagem {
     public static SimpleDateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm");
-    public static ArrayList<Mensagem> feed = new ArrayList<Mensagem>();
     protected User user;
     protected Date creationDate;
     protected String content;
@@ -18,12 +17,10 @@ public abstract class Mensagem {
     protected String id;
 
     public Mensagem(User user, Date creationDate, String content) {
-        this.user = user;
         this.creationDate = creationDate;
         this.content = content;
         this.likes = new ArrayList<User>();
-        Mensagem.feed.add(this);
-        
+        this.user = user;
     }
 
     public void like(User u){

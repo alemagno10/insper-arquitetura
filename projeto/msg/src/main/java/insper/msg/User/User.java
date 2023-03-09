@@ -1,7 +1,7 @@
 package insper.msg.User;
 
 import lombok.*;
-import java.util.ArrayList;
+import java.util.*;
 import insper.msg.Mensagem.Mensagem;
 
 @Getter
@@ -11,21 +11,17 @@ public class User {
     private String email;
     private String username;
     private String id;
-    private ArrayList<Mensagem>timeline;
+    private List<String>timeline;
 
     public User(String name, String email, String username) {  
         this.name = name;
         this.email = email;
         this.username = username;
-        this.timeline = new ArrayList<Mensagem>();
+        this.timeline = new ArrayList<>();
     }
 
-    public void post(Mensagem m){
+    public void updateTimeline(String m){
         timeline.add(m);
-    }
-
-    public Mensagem getPost(int index){
-        return timeline.get(index);
     }
 
     public void deletePost(int index){
