@@ -24,6 +24,7 @@ public class Compra {
     @ManyToOne
     @JoinColumn(name = "id_cliente")
     private Cliente cliente;
-   // private List<Item> itens = new ArrayList<>();
-
+   
+    @OneToMany(mappedBy = "compra")
+    private List<Item> itens = new ArrayList<>();
 }
