@@ -3,9 +3,7 @@ package com.insper.partida.equipe;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.insper.partida.game.Game;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.File;
@@ -14,8 +12,6 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor
 public class Team {
 
     @Id
