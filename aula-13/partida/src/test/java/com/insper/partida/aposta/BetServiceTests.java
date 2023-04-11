@@ -1,6 +1,8 @@
 package com.insper.partida.aposta;
 
 import com.insper.partida.equipe.Team;
+import com.insper.partida.equipe.TeamService;
+import com.insper.partida.game.Game;
 import com.insper.partida.game.GameService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -23,6 +25,8 @@ public class BetServiceTests {
     @Mock
     BetRespository betRespository;
 
+    @Mock
+    TeamService teamService;
 
     @Mock
     GameService gameService;
@@ -30,7 +34,13 @@ public class BetServiceTests {
 
     @Test
     void test_saveBet() {
+        Bet bet = new Bet();
+        bet.setResult(BetResult.HOME);
+        bet.setStatus(BetStatus.WON);
 
+        Mockito.when(betRespository.save(bet)).thenReturn(bet);
+        Bet resp = betService.saveBet(bet);
+        Assertions.assertEquals(BetResult.HOME, resp.getResult());
     }
 
 
