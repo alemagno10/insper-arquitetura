@@ -23,7 +23,7 @@ public class GameController {
     }
 
     @PostMapping
-    public Game saveGame(@RequestBody Game game) {
+    public Game saveGame(@RequestBody SaveGameDTO game) {
         return gameService.saveGame(game);
     }
 
