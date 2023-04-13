@@ -10,6 +10,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 public class GameReturnDTO {
+
     private String identifier;
     private Integer scoreHome;
     private Integer scoreAway;
@@ -28,6 +29,8 @@ public class GameReturnDTO {
         gameReturnDTO.setStatus(game.getStatus());
         gameReturnDTO.setScoreAway(game.getScoreAway());
         gameReturnDTO.setScoreHome(game.getScoreHome());
+        gameReturnDTO.setHome(TeamReturnDTO.covert(game.getHome()));
+        gameReturnDTO.setAway(TeamReturnDTO.covert(game.getAway()));
         return gameReturnDTO;
     }
 

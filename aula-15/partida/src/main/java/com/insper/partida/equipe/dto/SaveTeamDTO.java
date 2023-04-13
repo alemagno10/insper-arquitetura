@@ -5,7 +5,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class TeamReturnDTO {
+public class SaveTeamDTO {
     private String identifier;
     private String name;
+    private String stadium;
 }

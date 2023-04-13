@@ -1,5 +1,6 @@
 package com.insper.partida.game;
 
+import com.insper.partida.game.dto.EditGameDTO;
 import com.insper.partida.game.dto.GameReturnDTO;
 import com.insper.partida.game.dto.SaveGameDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class GameController {
     private GameService gameService;
 
     @GetMapping
-    public Page<Game> listGames(@RequestParam(required = false) String home,
+    public Page<GameReturnDTO> listGames(@RequestParam(required = false) String home,
                                 @RequestParam(required = false) String away,
                                 @RequestParam(required = false) Integer attendance,
                                 Pageable pageable) {
@@ -25,22 +26,18 @@ public class GameController {
     }
 
     @PostMapping
-<<<<<<< HEAD
-    public Game saveGame(@RequestBody SaveGameDTO game) {
-=======
     public GameReturnDTO saveGame(@RequestBody SaveGameDTO game) {
->>>>>>> upstream/master
         return gameService.saveGame(game);
     }
 
 
     @GetMapping("/{identifier}")
-    public Game getGame(@PathVariable String identifier) {
+    public GameReturnDTO getGame(@PathVariable String identifier) {
         return gameService.getGame(identifier);
     }
 
     @PostMapping("/{identifier}")
-    public Game changeGame(@PathVariable String identifier, @RequestBody Game game) {
+    public GameReturnDTO changeGame(@PathVariable String identifier, @RequestBody EditGameDTO game) {
         return gameService.editGame(identifier, game);
     }
 
