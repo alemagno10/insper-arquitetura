@@ -36,6 +36,11 @@ public class BetService {
         return null;
     }
 
+    public List<Bet> getBetbyMatch(String gameId){
+        GameReturnDTO game = gameService.verifyGame(gameId);
+        if(game != null) return betRespository.findByGameIdentifier(gameId);
+        return null;
+    }
 
 
 }

@@ -9,7 +9,6 @@ public class GameService {
 
     public GameReturnDTO verifyGame(String identifier) {
         RestTemplate restTemplate = new RestTemplate();
-
         ResponseEntity<GameReturnDTO> response =
                 restTemplate.getForEntity("http://localhost:8080/game/" + identifier, GameReturnDTO.class);
         if (response.getStatusCode().is2xxSuccessful()) {
