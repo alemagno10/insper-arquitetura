@@ -33,5 +33,4 @@ public class BetController {
     public List<Bet> getBetbyMatch(@PathVariable String id){
         return betService.getBetbyMatch(id_partida);
     }
-    findByGameIdentifier
 }
