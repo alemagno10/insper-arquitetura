@@ -3,7 +3,7 @@ package com.insper.partida.aposta;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import com.insper.partida.game.GameReturnDTO;
+// import com.insper.partida.game.GameReturnDTO;
 
 import java.util.List;
 
@@ -31,6 +31,6 @@ public class BetController {
 
     @GetMapping("{id_partida}/partida")
     public List<Bet> getBetbyMatch(@PathVariable String id){
-        return betService.getBetbyMatch(id_partida);
+        return betService.getBetbyMatch(id);
     }
 }
